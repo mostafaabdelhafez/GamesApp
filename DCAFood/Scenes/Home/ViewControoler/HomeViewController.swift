@@ -6,8 +6,15 @@
 //
 
 import UIKit
-
+import Foundation
 class HomeViewController: UIViewController {
+    var games = [GameModel](){
+        didSet{
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     @IBOutlet weak var tableView:UITableView!{
         didSet{
             tableView.delegate = self
@@ -23,6 +30,16 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.isNavigationBarHidden = false
         title = "Games"
+
+        Request.request(method: .GET, endpoint:.games(page: 1), completion: { data in
+            guard data != nil else{return}
+            if let games = try? JSONDecoder().decode(BaseModel.self, from: data!).results {
+                print(games.count)
+                
+                self.games = games
+                }
+
+        })
         // Do any additional setup after loading the view.
     }
 
@@ -40,7 +57,7 @@ class HomeViewController: UIViewController {
 }
 extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        6
+        games.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,7 +65,8 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         else{
             return UITableViewCell()
         }
-               
+        let game = games[indexPath.row]
+        cell.configureWith(model: game)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -22,6 +22,14 @@ class DetailsViewcontroller: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Request.request(method: .GET, endpoint:.games(page: 1), completion: { data in
+            guard data != nil else{return}
+            if let games = try? JSONDecoder().decode(BaseModel.self, from: data!).results {
+                print(games.count)
+                
+                }
+
+        })
 
         // Do any additional setup after loading the view.
     }
