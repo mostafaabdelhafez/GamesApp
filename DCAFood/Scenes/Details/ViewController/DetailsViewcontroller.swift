@@ -8,6 +8,7 @@
 import UIKit
 
 class DetailsViewcontroller: UIViewController {
+    var headerTitles = ["Game Description","Visit Reddit","Visit Website"]
     var headerView:DetailsHeaderView = UIView.fromNib()
     @IBOutlet weak var tableView:UITableView!{
         didSet{
@@ -17,19 +18,42 @@ class DetailsViewcontroller: UIViewController {
             tableView.dataSource = self
             let nib = UINib(nibName: "DetailsTableViewCell", bundle: nil)
             tableView.register(nib.self, forCellReuseIdentifier: "DetailsTableViewCell")
+            
+            let headerNib = UINib(nibName: "SectionHeader", bundle: nil)
+            tableView.register(headerNib.self, forHeaderFooterViewReuseIdentifier: "SectionHeader")
+
         }
     }
-
+    var id:Int
+    var details:DetailsModel!{
+        didSet{
+            self.tableView.reloadData()
+        }
+    }
+    required init(id:Int) {
+        self.id = id
+        super.init(nibName: "DetailsViewcontroller", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        Request.request(method: .GET, endpoint:.games(page: 1), completion: { data in
+        
+        Request.request(method: .GET, endpoint: .gameDetails(id: id)) { data in
             guard data != nil else{return}
-            if let games = try? JSONDecoder().decode(BaseModel.self, from: data!).results {
-                print(games.count)
+            
+            if let details = try? JSONDecoder().decode(DetailsModel.self, from: data!) {
                 
+                DispatchQueue.main.async {
+                    
+                    self.headerView.configure(name: details.name ?? "", image: details.image ?? "")
+                    self.details = details
                 }
-
-        })
+            }
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -48,21 +72,37 @@ class DetailsViewcontroller: UIViewController {
 }
 extension DetailsViewcontroller:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        6
+        1
+        
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        headerTitles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsTableViewCell", for: indexPath) as? DetailsTableViewCell
         else{return UITableViewCell()}
+        guard details != nil,indexPath.section == 0 else{return UITableViewCell()}
         
-        cell.name.text = "Header"
-        cell.desc.text = "Cell"
+            cell.desc.text = details!.description ?? ""
+        cell.desc.setLineHeight(lineHeight: 6)
                 
         return cell
     }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SectionHeader") as! SectionHeader
+        
+        guard details != nil else{return UIView()}
+        header.headerName.text = headerTitles[section]
+        return header
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        30
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        UITableView.automaticDimension
+        indexPath.section == 0 ? UITableView.automaticDimension : 16
+        
     }
     
     

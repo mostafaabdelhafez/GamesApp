@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,37 +13,39 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="151" id="KGk-i7-Jjw" customClass="DetailsTableViewCell" customModule="DCAFood" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="458" height="151"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="458" height="151"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdY-ok-mzc" userLabel="name">
-                        <rect key="frame" x="16" y="16" width="426" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.19215688110000001" green="0.19215688110000001" blue="0.19215688110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNI-yc-55w" userLabel="desc">
-                        <rect key="frame" x="16" y="53" width="426" height="14.333333333333329"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNI-yc-55w" userLabel="desc">
+                        <rect key="frame" x="16" y="16" width="426" height="119"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.19215688110000001" green="0.19215688110000001" blue="0.19215688110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxP-gB-VNt">
+                        <rect key="frame" x="16" y="142.66666666666666" width="426" height="0.33333333333334281"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="PSp-Mm-XA9"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="FdY-ok-mzc" secondAttribute="trailing" constant="16" id="1H2-5r-gwc"/>
-                    <constraint firstItem="YNI-yc-55w" firstAttribute="top" secondItem="FdY-ok-mzc" secondAttribute="bottom" constant="16" id="3iX-gt-MUG"/>
-                    <constraint firstItem="FdY-ok-mzc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="MXt-Bl-OGy"/>
-                    <constraint firstItem="FdY-ok-mzc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="RiM-gt-wpM"/>
+                    <constraint firstItem="YNI-yc-55w" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="TGQ-Cf-c7W"/>
+                    <constraint firstItem="YNI-yc-55w" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="bZQ-2y-kxL"/>
+                    <constraint firstAttribute="trailing" secondItem="WxP-gB-VNt" secondAttribute="trailing" constant="16" id="bev-mw-42f"/>
                     <constraint firstItem="YNI-yc-55w" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bgu-7F-Xbc"/>
                     <constraint firstAttribute="trailing" secondItem="YNI-yc-55w" secondAttribute="trailing" constant="16" id="cfx-mS-tCp"/>
-                    <constraint firstAttribute="bottom" secondItem="YNI-yc-55w" secondAttribute="bottom" constant="162" id="yhz-5i-IAr"/>
+                    <constraint firstItem="WxP-gB-VNt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="et6-bO-RuH"/>
+                    <constraint firstAttribute="bottom" secondItem="WxP-gB-VNt" secondAttribute="bottom" constant="8" id="f9b-XE-v2s"/>
+                    <constraint firstAttribute="bottom" secondItem="YNI-yc-55w" secondAttribute="bottom" constant="16" id="uE4-Qj-W3d"/>
+                    <constraint firstAttribute="trailing" secondItem="YNI-yc-55w" secondAttribute="trailing" constant="16" id="z7I-ju-dI1"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="desc" destination="YNI-yc-55w" id="6vE-qG-Bna"/>
-                <outlet property="name" destination="FdY-ok-mzc" id="w7e-x7-Z59"/>
             </connections>
             <point key="canvasLocation" x="-13.740458015267174" y="57.394366197183103"/>
         </tableViewCell>

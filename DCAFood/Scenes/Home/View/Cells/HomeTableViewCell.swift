@@ -22,18 +22,12 @@ class HomeTableViewCell: UITableViewCell {
         }
 
         guard gameImage.image == nil else{return}
-        if let url = URL(string: model.image ?? ""){
-            
-            let queue = DispatchQueue(label: "", qos: .background, attributes: .concurrent)
-            queue.async {
-                
-                if let data = try? Data(contentsOf: url){
-                    DispatchQueue.main.async {
-                        self.gameImage.image = UIImage(data: data)
-                    }
-                }
-            }
-        }
+        
+        ImageProcessor.processFrom(urlString: model.image ?? "", completion: {image in
+            self.gameImage.image = image
+
+        })
+        
     }
 
     override func awakeFromNib() {

@@ -73,7 +73,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         136
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailsVc = DetailsViewcontroller(nibName: "DetailsViewcontroller", bundle: nil)
+        let detailsVc = DetailsViewcontroller(id: games[indexPath.row].id ?? 0)
         navigationController?.pushViewController(detailsVc, animated: true)
     }
     

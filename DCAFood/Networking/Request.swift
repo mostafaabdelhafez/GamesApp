@@ -11,7 +11,7 @@ class Request{
         var urlString:String!
         switch endpoint{
         case .gameDetails(let id):
-            urlString = "https://api.rawg.io/api/games/\(id)&key=77fa1ef7ee904c22b4a1f4aea0fd0f1d"
+            urlString = "https://api.rawg.io/api/games/\(id)?&key=77fa1ef7ee904c22b4a1f4aea0fd0f1d"
         case .games( let page):
             urlString = "https://api.rawg.io/api/games?page_size=10&page=\(page)&key=77fa1ef7ee904c22b4a1f4aea0fd0f1d"
         case .gameSearch( let page,let key):

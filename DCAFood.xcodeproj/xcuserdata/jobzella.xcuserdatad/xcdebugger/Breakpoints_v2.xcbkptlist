@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C3FAAA36-A1C9-45AE-9E33-D5A4402B3EF7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DCAFood/Scenes/Details/ViewController/DetailsViewcontroller.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "02CBC6A2-66B4-4F9C-B739-32DAB0CE80AC"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -34,6 +18,134 @@
             endingLineNumber = "17"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E7829C06-D40F-4C14-B863-734A3D58E792"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DCAFood/Helper/ImageProcessing.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2476A9D7-DF29-4195-B5B6-4E81C20CA176"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DCAFood/Scenes/Details/View/DetailsHeaderView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "configure(name:image:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5C30D0B6-E7C7-4EA3-B84C-650158E93FE6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DCAFood/Scenes/Details/ViewController/DetailsViewcontroller.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5C30D0B6-E7C7-4EA3-B84C-650158E93FE6 - 4dcfe7be3f9b471"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;) -&gt; () in DCAFood.DetailsViewcontroller.viewDidLoad() -&gt; ()"
+                  moduleName = "DCAFood"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jobzella/Desktop/DCAFood/DCAFood/Scenes/Details/ViewController/DetailsViewcontroller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "1288">
+               </Location>
+               <Location
+                  uuid = "5C30D0B6-E7C7-4EA3-B84C-650158E93FE6 - 43b607c87a123bea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;) -&gt; () in DCAFood.DetailsViewcontroller.viewDidLoad() -&gt; ()"
+                  moduleName = "DCAFood"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jobzella/Desktop/DCAFood/DCAFood/Scenes/Details/ViewController/DetailsViewcontroller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "314">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A5C6E17B-C6C9-4745-B785-AB175550FC94"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DCAFood/Scenes/Details/View/DetailsHeaderView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "configure(name:image:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A5C6E17B-C6C9-4745-B785-AB175550FC94 - 90080c7e8ad8e1b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DCAFood.DetailsHeaderView.configure(name: Swift.String, image: Swift.String) -&gt; ()"
+                  moduleName = "DCAFood"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jobzella/Desktop/DCAFood/DCAFood/Scenes/Details/View/DetailsHeaderView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "515">
+               </Location>
+               <Location
+                  uuid = "A5C6E17B-C6C9-4745-B785-AB175550FC94 - 11b67e3800282305"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in DCAFood.DetailsHeaderView.configure(name: Swift.String, image: Swift.String) -&gt; ()"
+                  moduleName = "DCAFood"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jobzella/Desktop/DCAFood/DCAFood/Scenes/Details/View/DetailsHeaderView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "53">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

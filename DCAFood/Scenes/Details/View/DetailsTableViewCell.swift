@@ -8,7 +8,6 @@
 import UIKit
 
 class DetailsTableViewCell: UITableViewCell {
-    @IBOutlet weak var name:UILabel!
     @IBOutlet weak var desc:UILabel!
 
     override func awakeFromNib() {

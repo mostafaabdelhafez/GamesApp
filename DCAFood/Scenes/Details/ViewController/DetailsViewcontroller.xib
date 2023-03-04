@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,16 +20,15 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mTw-3S-MML">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mTw-3S-MML">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mTw-3S-MML" secondAttribute="trailing" id="EvX-kW-hNj"/>
-                <constraint firstItem="mTw-3S-MML" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Fxv-ag-gWG"/>
+                <constraint firstItem="mTw-3S-MML" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Fxv-ag-gWG"/>
                 <constraint firstItem="mTw-3S-MML" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NEW-37-ODI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mTw-3S-MML" secondAttribute="bottom" id="pet-Oo-6V1"/>
             </constraints>
