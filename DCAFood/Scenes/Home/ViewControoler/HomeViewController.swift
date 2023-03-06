@@ -8,6 +8,17 @@
 import UIKit
 import Foundation
 class HomeViewController: UIViewController {
+    var isSearchEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    var isFiltered: Bool {
+        
+      return searchController.isActive && !isSearchEmpty
+    }
+
+    var searchText:String = ""
+    let searchController = UISearchController(searchResultsController: nil)
+
     var games = [GameModel](){
         didSet{
             DispatchQueue.main.async {
@@ -15,6 +26,14 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    var filteredGames = [GameModel](){
+        didSet{
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+
     @IBOutlet weak var tableView:UITableView!{
         didSet{
             tableView.delegate = self
@@ -23,13 +42,36 @@ class HomeViewController: UIViewController {
             tableView.register(cellNib.self, forCellReuseIdentifier: "HomeTableViewCell")
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.navigationController?.navigationBar.prefersLargeTitles = true
+        tabBarController?.navigationController?.isNavigationBarHidden = false
+        tabBarController?.navigationItem.title = "Games"
+
+    }
+    func setup(search:UISearchController,on navItem :UINavigationItem?){
+        search.searchBar.delegate = self
+        search.searchBar.placeholder = "Search For the Games"
+        search.searchResultsUpdater = self
+
+        definesPresentationContext = true
+        
+        navItem?.searchController = search
+    }
+    func filterGamesForSearchText(_ searchText: String) {
+        Request.request(method: .GET, endpoint:.gameSearch(page: 1, key: searchText), completion: { data in
+            guard data != nil else{return}
+            if let games = try? JSONDecoder().decode(BaseModel.self, from: data!).results {
+                print(games.count)
+                self.filteredGames = games
+                }
+        })
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.isNavigationBarHidden = false
-        title = "Games"
+        setup(search: searchController, on: tabBarController?.navigationItem)
 
         Request.request(method: .GET, endpoint:.games(page: 1), completion: { data in
             guard data != nil else{return}
@@ -43,21 +85,10 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        games.count
+        isFiltered ? filteredGames.count : games.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,7 +96,8 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         else{
             return UITableViewCell()
         }
-        let game = games[indexPath.row]
+        
+        let game = isFiltered ? filteredGames[indexPath.row] : games[indexPath.row]
         cell.configureWith(model: game)
         return cell
     }

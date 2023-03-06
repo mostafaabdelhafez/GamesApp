@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         // Override point for customization after application launch.
-       let rootScreenNavBar = UINavigationController(rootViewController: HomeViewController())
+       let rootScreenNavBar = UINavigationController(rootViewController: BaseTabBarController())
 
         window?.rootViewController = rootScreenNavBar
         window?.makeKeyAndVisible()

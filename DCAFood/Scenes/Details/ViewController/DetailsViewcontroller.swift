@@ -41,7 +41,7 @@ class DetailsViewcontroller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.navigationBar.prefersLargeTitles = false
         Request.request(method: .GET, endpoint: .gameDetails(id: id)) { data in
             guard data != nil else{return}
             

@@ -15,6 +15,11 @@
 		D478D1CB29B3D0FE005D28E0 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478D1CA29B3D0FE005D28E0 /* Request.swift */; };
 		D478D1CE29B3E5A8005D28E0 /* DetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478D1CD29B3E5A8005D28E0 /* DetailsModel.swift */; };
 		D478D1D029B3E876005D28E0 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478D1CF29B3E876005D28E0 /* ImageProcessing.swift */; };
+		D478D1D429B3FF55005D28E0 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478D1D229B3FF55005D28E0 /* BaseTabBarController.swift */; };
+		D478D1D529B3FF55005D28E0 /* BaseTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D478D1D329B3FF55005D28E0 /* BaseTabBarController.xib */; };
+		D478D1D929B40142005D28E0 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478D1D729B40142005D28E0 /* FavouritesViewController.swift */; };
+		D478D1DA29B40142005D28E0 /* FavouritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D478D1D829B40142005D28E0 /* FavouritesViewController.xib */; };
+		D4E4748C29B5B2330079DE48 /* HomeVC + Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4748B29B5B2330079DE48 /* HomeVC + Search.swift */; };
 		D4E7CEE329B26D5B001AD637 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E7CEE129B26D5B001AD637 /* HomeViewController.swift */; };
 		D4E7CEE429B26D5B001AD637 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4E7CEE229B26D5B001AD637 /* HomeViewController.xib */; };
 		D4E7CEE829B26DD8001AD637 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E7CEE629B26DD8001AD637 /* HomeTableViewCell.swift */; };
@@ -42,6 +47,11 @@
 		D478D1CA29B3D0FE005D28E0 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		D478D1CD29B3E5A8005D28E0 /* DetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsModel.swift; sourceTree = "<group>"; };
 		D478D1CF29B3E876005D28E0 /* ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
+		D478D1D229B3FF55005D28E0 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		D478D1D329B3FF55005D28E0 /* BaseTabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseTabBarController.xib; sourceTree = "<group>"; };
+		D478D1D729B40142005D28E0 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		D478D1D829B40142005D28E0 /* FavouritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritesViewController.xib; sourceTree = "<group>"; };
+		D4E4748B29B5B2330079DE48 /* HomeVC + Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC + Search.swift"; sourceTree = "<group>"; };
 		D4E7CEE129B26D5B001AD637 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D4E7CEE229B26D5B001AD637 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		D4E7CEE629B26DD8001AD637 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -110,9 +120,28 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D478D1D129B3FF2D005D28E0 /* BaseTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D478D1D229B3FF55005D28E0 /* BaseTabBarController.swift */,
+				D478D1D329B3FF55005D28E0 /* BaseTabBarController.xib */,
+			);
+			path = BaseTabBar;
+			sourceTree = "<group>";
+		};
+		D478D1D629B4012D005D28E0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D478D1D729B40142005D28E0 /* FavouritesViewController.swift */,
+				D478D1D829B40142005D28E0 /* FavouritesViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		D4E7CED829B26CE9001AD637 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D478D1D129B3FF2D005D28E0 /* BaseTabBar */,
 				D4E7CEDB29B26CFB001AD637 /* Favourites */,
 				D4E7CEDA29B26CF4001AD637 /* Details */,
 				D4E7CED929B26CEF001AD637 /* Home */,
@@ -145,6 +174,7 @@
 		D4E7CEDB29B26CFB001AD637 /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
+				D478D1D629B4012D005D28E0 /* ViewController */,
 			);
 			path = Favourites;
 			sourceTree = "<group>";
@@ -154,6 +184,7 @@
 			children = (
 				D4E7CEE129B26D5B001AD637 /* HomeViewController.swift */,
 				D4E7CEE229B26D5B001AD637 /* HomeViewController.xib */,
+				D4E4748B29B5B2330079DE48 /* HomeVC + Search.swift */,
 			);
 			path = ViewControoler;
 			sourceTree = "<group>";
@@ -304,11 +335,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D478D1D529B3FF55005D28E0 /* BaseTabBarController.xib in Resources */,
 				D4E7CEFF29B2837C001AD637 /* SectionHeader.xib in Resources */,
 				D43FD78E29AE961100680664 /* LaunchScreen.storyboard in Resources */,
 				D43FD78B29AE961100680664 /* Assets.xcassets in Resources */,
 				D4E7CEF729B2818F001AD637 /* DetailsViewcontroller.xib in Resources */,
 				D4E7CF0329B2866A001AD637 /* DetailsTableViewCell.xib in Resources */,
+				D478D1DA29B40142005D28E0 /* FavouritesViewController.xib in Resources */,
 				D4E7CEE929B26DD8001AD637 /* HomeTableViewCell.xib in Resources */,
 				D4E7CEF129B27608001AD637 /* DetailsHeaderView.xib in Resources */,
 				D4E7CEE429B26D5B001AD637 /* HomeViewController.xib in Resources */,
@@ -322,8 +355,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D478D1D929B40142005D28E0 /* FavouritesViewController.swift in Sources */,
 				D43FD78629AE961000680664 /* ViewController.swift in Sources */,
 				D478D1CB29B3D0FE005D28E0 /* Request.swift in Sources */,
+				D4E4748C29B5B2330079DE48 /* HomeVC + Search.swift in Sources */,
+				D478D1D429B3FF55005D28E0 /* BaseTabBarController.swift in Sources */,
 				D4E7CEFA29B2828C001AD637 /* Extensions.swift in Sources */,
 				D4E7CEFC29B28361001AD637 /* SectionHeader.swift in Sources */,
 				D4E7CEE829B26DD8001AD637 /* HomeTableViewCell.swift in Sources */,
