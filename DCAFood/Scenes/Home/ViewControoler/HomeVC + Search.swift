@@ -8,7 +8,10 @@
 import UIKit
 extension HomeViewController: UISearchBarDelegate,UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        filterGamesForSearchText(searchController.searchBar.text!)
+        if let text = searchController.searchBar.text,text.count >= 3{
+            
+            filterGamesForSearchText(searchController.searchBar.text!)
+        }
       }
 
 }

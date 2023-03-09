@@ -38,9 +38,14 @@ class DetailsViewcontroller: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    @objc func favouriteDidTapped(){
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let rightBarItem = UIBarButtonItem(title: "Favourites", style: .plain, target: self, action: #selector(favouriteDidTapped))
+        navigationItem.rightBarButtonItem = rightBarItem
         navigationController?.navigationBar.prefersLargeTitles = false
         Request.request(method: .GET, endpoint: .gameDetails(id: id)) { data in
             guard data != nil else{return}
