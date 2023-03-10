@@ -15,19 +15,34 @@
             <rect key="frame" x="0.0" y="0.0" width="472" height="408"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gtj-PY-JHv">
-                    <rect key="frame" x="16" y="193.66666666666666" width="440" height="21"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                    <color key="textColor" red="0.19215688110000001" green="0.19215688110000001" blue="0.19215688110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jFM-xB-Klh">
+                    <rect key="frame" x="16" y="189" width="440" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gtj-PY-JHv">
+                            <rect key="frame" x="0.0" y="0.0" width="45" height="21.666666666666668"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <color key="textColor" red="0.19215688110000001" green="0.19215688110000001" blue="0.19215688110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdf-5v-Tgv">
+                            <rect key="frame" x="0.0" y="29.666666666666657" width="440" height="0.33333333333333215"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="Tho-pA-KUH"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="hdf-5v-Tgv" firstAttribute="width" secondItem="jFM-xB-Klh" secondAttribute="width" id="Nb2-DQ-geZ"/>
+                    </constraints>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="9Ll-vS-MYK"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="9Ll-vS-MYK" firstAttribute="trailing" secondItem="Gtj-PY-JHv" secondAttribute="trailing" constant="16" id="DET-Ql-J8u"/>
-                <constraint firstItem="Gtj-PY-JHv" firstAttribute="centerY" secondItem="5TN-Fj-j7N" secondAttribute="centerY" id="Dmy-by-aSf"/>
-                <constraint firstItem="Gtj-PY-JHv" firstAttribute="leading" secondItem="9Ll-vS-MYK" secondAttribute="leading" constant="16" id="NdT-pw-zbJ"/>
+                <constraint firstItem="9Ll-vS-MYK" firstAttribute="trailing" secondItem="jFM-xB-Klh" secondAttribute="trailing" constant="16" id="6CJ-yz-aHy"/>
+                <constraint firstItem="jFM-xB-Klh" firstAttribute="centerY" secondItem="5TN-Fj-j7N" secondAttribute="centerY" id="LIK-kz-cdj"/>
+                <constraint firstItem="jFM-xB-Klh" firstAttribute="leading" secondItem="5TN-Fj-j7N" secondAttribute="leading" constant="16" id="cNn-eZ-KzD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

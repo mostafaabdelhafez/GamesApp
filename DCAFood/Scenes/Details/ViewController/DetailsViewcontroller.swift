@@ -6,7 +6,9 @@
 //
 
 import UIKit
-
+protocol ShowMoreHandler{
+    func showMoreTapped()
+}
 class DetailsViewcontroller: UIViewController {
     var headerTitles = ["Game Description","Visit Reddit","Visit Website"]
     var headerView:DetailsHeaderView = UIView.fromNib()
@@ -90,9 +92,9 @@ extension DetailsViewcontroller:UITableViewDelegate,UITableViewDataSource{
         else{return UITableViewCell()}
         guard details != nil,indexPath.section == 0 else{return UITableViewCell()}
         
-            cell.desc.text = details!.description ?? ""
+        cell.desc.text = details!.raw ?? ""
         cell.desc.setLineHeight(lineHeight: 6)
-                
+        cell.delegate = self
         return cell
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -103,11 +105,21 @@ extension DetailsViewcontroller:UITableViewDelegate,UITableViewDataSource{
         return header
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        30
+        40
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        indexPath.section == 0 ? UITableView.automaticDimension : 16
+        indexPath.section == 0 ? UITableView.automaticDimension : 0
         
+    }
+    
+}
+extension DetailsViewcontroller:ShowMoreHandler{
+    func showMoreTapped() {
+            self.tableView.reloadData()
+        UIView.animate(withDuration: 0.2) {[weak self] in
+            self?.tableView.contentOffset.y += 40
+            self?.view.layoutIfNeeded()
+        }
     }
     
     
