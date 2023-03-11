@@ -14,13 +14,7 @@ class DetailsHeaderView: UIView {
     func configure(name:String,image:String){
         gameName.text = name
         
-        DispatchQueue.main.async {
-            ImageProcessor.processFrom(urlString: image, completion: {image in
-                self.gameImage.image = image
-                
-            })
-        }
-        
+        ImageProcessor.processFrom(urlString: image, to: gameImage)
     }
     /*
     // Only override draw() if you perform custom drawing.

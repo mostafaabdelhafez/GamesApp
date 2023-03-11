@@ -6,20 +6,12 @@
 //
 
 import UIKit
+import Kingfisher
 class ImageProcessor{
-    class func processFrom(urlString:String,completion:@escaping(_ image:UIImage?)->Void){
+    class func processFrom(urlString:String,to image:UIImageView){
+        image.kf.indicatorType = .activity
         if let url = URL(string: urlString){
-            
-            let queue = DispatchQueue(label: "", qos: .background, attributes: .concurrent)
-            queue.async {
-                
-                if let data = try? Data(contentsOf: url){
-                    DispatchQueue.main.async {
-                        
-                        completion(UIImage(data: data))
-                    }
-                }
-            }
+            image.kf.setImage(with: url)
         }
     }
 }

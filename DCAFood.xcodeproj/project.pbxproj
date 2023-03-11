@@ -19,6 +19,10 @@
 		D478D1D529B3FF55005D28E0 /* BaseTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D478D1D329B3FF55005D28E0 /* BaseTabBarController.xib */; };
 		D478D1D929B40142005D28E0 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478D1D729B40142005D28E0 /* FavouritesViewController.swift */; };
 		D478D1DA29B40142005D28E0 /* FavouritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D478D1D829B40142005D28E0 /* FavouritesViewController.xib */; };
+		D47EB04D29BB9EB200388596 /* CoreDataFile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D47EB04B29BB9EB200388596 /* CoreDataFile.xcdatamodeld */; };
+		D47EB04F29BBAAD300388596 /* GameOffline.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47EB04E29BBAAD300388596 /* GameOffline.swift */; };
+		D4A06F9B29BC2939008AD13A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D4A06F9A29BC2939008AD13A /* Kingfisher */; };
+		D4A06F9E29BC2F8D008AD13A /* CoredataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A06F9D29BC2F8D008AD13A /* CoredataHelper.swift */; };
 		D4B9143F29B9A6CF00FDB3AF /* EmptyStateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9143E29B9A6CF00FDB3AF /* EmptyStateLabel.swift */; };
 		D4B9144229B9ABBD00FDB3AF /* GamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9144029B9ABBD00FDB3AF /* GamesCollectionViewCell.swift */; };
 		D4B9144329B9ABBD00FDB3AF /* GamesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B9144129B9ABBD00FDB3AF /* GamesCollectionViewCell.xib */; };
@@ -54,6 +58,9 @@
 		D478D1D329B3FF55005D28E0 /* BaseTabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseTabBarController.xib; sourceTree = "<group>"; };
 		D478D1D729B40142005D28E0 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		D478D1D829B40142005D28E0 /* FavouritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritesViewController.xib; sourceTree = "<group>"; };
+		D47EB04C29BB9EB200388596 /* CoreDataFile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataFile.xcdatamodel; sourceTree = "<group>"; };
+		D47EB04E29BBAAD300388596 /* GameOffline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOffline.swift; sourceTree = "<group>"; };
+		D4A06F9D29BC2F8D008AD13A /* CoredataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataHelper.swift; sourceTree = "<group>"; };
 		D4B9143E29B9A6CF00FDB3AF /* EmptyStateLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateLabel.swift; sourceTree = "<group>"; };
 		D4B9144029B9ABBD00FDB3AF /* GamesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesCollectionViewCell.swift; sourceTree = "<group>"; };
 		D4B9144129B9ABBD00FDB3AF /* GamesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamesCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -79,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A06F9B29BC2939008AD13A /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +112,7 @@
 		D43FD78029AE960F00680664 /* DCAFood */ = {
 			isa = PBXGroup;
 			children = (
+				D4A06F9C29BC2F79008AD13A /* CoreDataHelper */,
 				D4E7CEF829B2827C001AD637 /* Extensions */,
 				D4E7CEF229B27A8F001AD637 /* Networking */,
 				D4E7CEEC29B2758D001AD637 /* Helper */,
@@ -114,6 +123,7 @@
 				D43FD78A29AE961100680664 /* Assets.xcassets */,
 				D43FD78C29AE961100680664 /* LaunchScreen.storyboard */,
 				D43FD78F29AE961100680664 /* Info.plist */,
+				D47EB04B29BB9EB200388596 /* CoreDataFile.xcdatamodeld */,
 			);
 			path = DCAFood;
 			sourceTree = "<group>";
@@ -142,6 +152,14 @@
 				D478D1D829B40142005D28E0 /* FavouritesViewController.xib */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D4A06F9C29BC2F79008AD13A /* CoreDataHelper */ = {
+			isa = PBXGroup;
+			children = (
+				D4A06F9D29BC2F8D008AD13A /* CoredataHelper.swift */,
+			);
+			path = CoreDataHelper;
 			sourceTree = "<group>";
 		};
 		D4E7CED829B26CE9001AD637 /* Scenes */ = {
@@ -221,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				D4E7CEEA29B2707A001AD637 /* HomeModel.swift */,
+				D47EB04E29BBAAD300388596 /* GameOffline.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,6 +318,9 @@
 			dependencies = (
 			);
 			name = DCAFood;
+			packageProductDependencies = (
+				D4A06F9A29BC2939008AD13A /* Kingfisher */,
+			);
 			productName = DCAFood;
 			productReference = D43FD77E29AE960F00680664 /* DCAFood.app */;
 			productType = "com.apple.product-type.application";
@@ -328,7 +350,7 @@
 			);
 			mainGroup = D43FD77529AE960F00680664;
 			packageReferences = (
-				D425C6EE29B3BBF800D1A390 /* XCRemoteSwiftPackageReference "Moya" */,
+				D4A06F9929BC2939008AD13A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = D43FD77F29AE960F00680664 /* Products */;
 			projectDirPath = "";
@@ -365,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D47EB04D29BB9EB200388596 /* CoreDataFile.xcdatamodeld in Sources */,
 				D478D1D929B40142005D28E0 /* FavouritesViewController.swift in Sources */,
 				D43FD78629AE961000680664 /* ViewController.swift in Sources */,
 				D478D1CB29B3D0FE005D28E0 /* Request.swift in Sources */,
@@ -372,6 +395,7 @@
 				D478D1D429B3FF55005D28E0 /* BaseTabBarController.swift in Sources */,
 				D4E7CEFA29B2828C001AD637 /* Extensions.swift in Sources */,
 				D4B9144229B9ABBD00FDB3AF /* GamesCollectionViewCell.swift in Sources */,
+				D4A06F9E29BC2F8D008AD13A /* CoredataHelper.swift in Sources */,
 				D4E7CEFC29B28361001AD637 /* SectionHeader.swift in Sources */,
 				D4E7CEE829B26DD8001AD637 /* HomeTableViewCell.swift in Sources */,
 				D43FD78229AE961000680664 /* AppDelegate.swift in Sources */,
@@ -380,6 +404,7 @@
 				D4E7CEEB29B2707A001AD637 /* HomeModel.swift in Sources */,
 				D4B9143F29B9A6CF00FDB3AF /* EmptyStateLabel.swift in Sources */,
 				D478D1CE29B3E5A8005D28E0 /* DetailsModel.swift in Sources */,
+				D47EB04F29BBAAD300388596 /* GameOffline.swift in Sources */,
 				D478D1D029B3E876005D28E0 /* ImageProcessing.swift in Sources */,
 				D4E7CEEF29B275F8001AD637 /* DetailsHeaderView.swift in Sources */,
 				D43FD78429AE961000680664 /* SceneDelegate.swift in Sources */,
@@ -593,15 +618,36 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D425C6EE29B3BBF800D1A390 /* XCRemoteSwiftPackageReference "Moya" */ = {
+		D4A06F9929BC2939008AD13A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya.git";
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				minimumVersion = 6.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D4A06F9A29BC2939008AD13A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4A06F9929BC2939008AD13A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		D47EB04B29BB9EB200388596 /* CoreDataFile.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D47EB04C29BB9EB200388596 /* CoreDataFile.xcdatamodel */,
+			);
+			currentVersion = D47EB04C29BB9EB200388596 /* CoreDataFile.xcdatamodel */;
+			path = CoreDataFile.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D43FD77629AE960F00680664 /* Project object */;
 }

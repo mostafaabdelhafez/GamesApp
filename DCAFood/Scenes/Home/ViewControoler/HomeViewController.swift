@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Foundation
+import CoreData
 class HomeViewController: UIViewController {
     var isSearchEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
@@ -47,7 +47,8 @@ class HomeViewController: UIViewController {
         tabBarController?.navigationController?.navigationBar.prefersLargeTitles = true
         tabBarController?.navigationController?.isNavigationBarHidden = false
         tabBarController?.navigationItem.title = "Games"
-        
+        setup(search: searchController, on: tabBarController?.navigationItem)
+
     }
     func setup(search:UISearchController,on navItem :UINavigationItem?){
         search.searchBar.delegate = self
@@ -71,9 +72,10 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup(search: searchController, on: tabBarController?.navigationItem)
-        
+        let group = DispatchGroup()
+        group.enter()
         Request.request(method: .GET, endpoint:.games(page: 1), completion: { data in
+            defer{group.leave()}
             guard data != nil else{return}
             if let games = try? JSONDecoder().decode(BaseModel.self, from: data!).results {
                 print(games.count)
@@ -82,7 +84,10 @@ class HomeViewController: UIViewController {
             }
             
         })
-        // Do any additional setup after loading the view.
+        group.notify(queue: .main) {
+            self.collectionView.reloadData()
+        }
+
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -127,7 +132,8 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailsVc = DetailsViewcontroller(id: isFiltered ? filteredGames[indexPath.row].id ?? 0 : games[indexPath.row].id ?? 0)
+        let detailsVc = DetailsViewcontroller(id: isFiltered ? filteredGames[indexPath.row].id ?? 0 : games[indexPath.row].id ?? 0,selectedGame: isFiltered ? filteredGames[indexPath.row] : games[indexPath.row])
+        
         navigationController?.pushViewController(detailsVc, animated: true)
     }
 }

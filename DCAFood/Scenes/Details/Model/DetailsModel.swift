@@ -22,3 +22,6 @@ struct DetailsModel:Codable{
     }
 
 }
+protocol ShowMoreHandler{
+    func showMoreTapped()
+}

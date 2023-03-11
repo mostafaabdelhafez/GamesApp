@@ -6,12 +6,13 @@
 //
 
 import UIKit
-protocol ShowMoreHandler{
-    func showMoreTapped()
-}
+import CoreData
+import Foundation
 class DetailsViewcontroller: UIViewController {
     var headerTitles = ["Game Description","Visit Reddit","Visit Website"]
     var headerView:DetailsHeaderView = UIView.fromNib()
+    var rightBarItem:UIBarButtonItem!
+
     @IBOutlet weak var tableView:UITableView!{
         didSet{
             headerView.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: tableView.frame.height * 0.4)
@@ -32,8 +33,18 @@ class DetailsViewcontroller: UIViewController {
             self.tableView.reloadData()
         }
     }
-    required init(id:Int) {
+    var isFavourited:Bool = false{
+        didSet{
+            
+            addBarItemWith(title: isFavourited ? "favourited" : "favourite")
+            
+        }
+    }
+    var selectedGame:GameModel
+
+    required init(id:Int,selectedGame:GameModel) {
         self.id = id
+        self.selectedGame = selectedGame
         super.init(nibName: "DetailsViewcontroller", bundle: nil)
     }
     
@@ -41,14 +52,23 @@ class DetailsViewcontroller: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     @objc func favouriteDidTapped(){
-        
+        CoreDataStack.sharedInstance.save(selectedGame: selectedGame)
+        rightBarItem.title = "favourited"
+        rightBarItem.isEnabled = false
+    }
+    func addBarItemWith(title:String){
+         rightBarItem = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(favouriteDidTapped))
+        rightBarItem.isEnabled = !isFavourited
+
+        navigationItem.rightBarButtonItem = rightBarItem
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let rightBarItem = UIBarButtonItem(title: "Favourites", style: .plain, target: self, action: #selector(favouriteDidTapped))
-        navigationItem.rightBarButtonItem = rightBarItem
         navigationController?.navigationBar.prefersLargeTitles = false
+        let games = CoreDataStack.sharedInstance.getGames()
+        isFavourited = games.map { $0.id }.contains(NSNumber(integerLiteral:id))
+
         Request.request(method: .GET, endpoint: .gameDetails(id: id)) { data in
             guard data != nil else{return}
             
@@ -61,6 +81,7 @@ class DetailsViewcontroller: UIViewController {
                 }
             }
         }
+
 
         // Do any additional setup after loading the view.
     }

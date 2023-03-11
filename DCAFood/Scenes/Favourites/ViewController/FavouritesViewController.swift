@@ -6,14 +6,18 @@
 //
 
 import UIKit
-
+import CoreData
+import Kingfisher
 class FavouritesViewController: UIViewController {
     var emptyLabel:UILabel!
-    var games = [GameModel](){
+    var games : [OfflineGame]!{
         didSet{
+            
             DispatchQueue.main.async {
                 self.showEmptyState = false
                 self.collectionView.reloadData()
+                self.tabBarController?.navigationItem.title = "Favourites" + "(\(self.games.count))"
+
             }
         }
     }
@@ -26,12 +30,17 @@ class FavouritesViewController: UIViewController {
         }
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchData()
+
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.navigationController?.navigationBar.prefersLargeTitles = true
         tabBarController?.navigationController?.isNavigationBarHidden = false
-        tabBarController?.navigationController?.navigationItem.searchController = nil
-        self.tabBarController?.navigationItem.title = "Favourites" + "(\(self.games.count))"
+        tabBarController?.navigationItem.searchController = nil
+        
 
     }
     var showEmptyState:Bool{
@@ -43,10 +52,16 @@ class FavouritesViewController: UIViewController {
             self.showEmptyState
         }
     }
+    func fetchData(){
+
+        self.games = CoreDataStack.sharedInstance.getGames()
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         emptyLabel = EmptyStateCreator.createWith(text: "There's no Favourites found", on: view)
         showEmptyState = true
+
         // Do any additional setup after loading the view.
     }
 
@@ -64,7 +79,7 @@ class FavouritesViewController: UIViewController {
 }
 extension FavouritesViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        games.count
+        games == nil ? 0 : games.count
     }
 
     
@@ -73,9 +88,11 @@ extension FavouritesViewController:UICollectionViewDelegate,UICollectionViewData
         else{
             return UICollectionViewCell()
         }
-        
+        guard games != nil else{return UICollectionViewCell()}
         let game =  games[indexPath.row]
-        cell.configureWith(model: game)
+        cell.configureWith(model: nil,offlineModel: game)
+
+
         return cell
     }
 
@@ -92,10 +109,5 @@ extension FavouritesViewController:UICollectionViewDelegate,UICollectionViewData
             return   CGSize(width: collectionView.frame.width, height: 136)
         }
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailsVc = DetailsViewcontroller(id: games[indexPath.row].id ?? 0)
-        navigationController?.pushViewController(detailsVc, animated: true)
-    }
-
     
 }

@@ -5,7 +5,7 @@
 //  Created by jobzella on 03/03/2023.
 //
 
-import Foundation
+import UIKit
 struct BaseModel:Codable{
     var results:[GameModel]
 }
@@ -21,6 +21,11 @@ struct GameModel:Codable{
     }
 
 }
+struct GameWithImage{
+    var game:GameModel
+    var image:UIImage?
+}
+
 struct GameGenre:Codable{
     var name:String?
 }
