@@ -12,6 +12,8 @@ class GamesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var gameName:UILabel!
     @IBOutlet weak var metacritic:UILabel!
     @IBOutlet weak var gameType:UILabel!
+    var viewModel:GamesViewModel!
+
     func configureWith(model:GameModel!,offlineModel:OfflineGame! = nil){
         var game:GameModel!
         if offlineModel != nil{
@@ -26,9 +28,7 @@ class GamesCollectionViewCell: UICollectionViewCell {
         gameName.text = game.name ?? ""
         metacritic.text = "\(game.metacritic ?? 0)"
         if let generes = game.genres{
-            let names = generes.map { $0.name ?? "" }
-            gameType.text = names.count > 1 ? names.joined(separator: ", ") : names.first ?? ""
-
+            gameType.text = viewModel.getGenresNamesFrom(genres: generes)
         }
         ImageProcessor.processFrom(urlString: game.image ?? "", to: gameImage)
 

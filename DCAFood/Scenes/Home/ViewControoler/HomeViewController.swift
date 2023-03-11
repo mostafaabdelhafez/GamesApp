@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
         
         return searchController.isActive && !isSearchEmpty
     }
+    var viewModel:GamesViewModel!
     
     var searchText:String = ""
     let searchController = UISearchController(searchResultsController: nil)
@@ -33,7 +34,8 @@ class HomeViewController: UIViewController {
             }
         }
     }
-    
+    var pageNumber:Int = 1
+    var totalPages:Int = 0
     @IBOutlet weak var collectionView:UICollectionView!{
         didSet{
             collectionView.delegate = self
@@ -59,34 +61,43 @@ class HomeViewController: UIViewController {
         
         navItem?.searchController = search
     }
-    func filterGamesForSearchText(_ searchText: String) {
-        Request.request(method: .GET, endpoint:.gameSearch(page: 1, key: searchText), completion: { data in
+    func filterGamesForSearchText(_ searchText: String,with page:Int) {
+        
+        Request.request(method: .GET, endpoint:.gameSearch(page: page, key: searchText), completion: { data in
             guard data != nil else{return}
-            if let games = try? JSONDecoder().decode(BaseModel.self, from: data!).results {
-                print(games.count)
-                self.filteredGames = games
+            if let response = try? JSONDecoder().decode(BaseModel.self, from: data!) {
+                if let games = response.results{
+                    self.filteredGames += games
+                }
+                self.totalPages = response.count ?? 0
+                self.thereIsMorePages = response.next == nil ? false : true
+
             }
         })
         
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let group = DispatchGroup()
+    let group = DispatchGroup()
+   var thereIsMorePages = false
+    func fetchGamesWith(page:Int){
         group.enter()
-        Request.request(method: .GET, endpoint:.games(page: 1), completion: { data in
-            defer{group.leave()}
+        Request.request(method: .GET, endpoint:.games(page: page), completion: { data in
+            defer{self.group.leave()}
             guard data != nil else{return}
-            if let games = try? JSONDecoder().decode(BaseModel.self, from: data!).results {
-                print(games.count)
-                
-                self.games = games
+            if let response = try? JSONDecoder().decode(BaseModel.self, from: data!) {
+                if let games = response.results{
+                    self.games = games
+                }
             }
             
         })
         group.notify(queue: .main) {
             self.collectionView.reloadData()
         }
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel = GamesViewModel()
+        fetchGamesWith(page: 1)
 
     }
     override func viewDidLayoutSubviews() {
@@ -113,7 +124,7 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
         else{
             return UICollectionViewCell()
         }
-        
+        cell.viewModel = viewModel
         let game = isFiltered ? filteredGames[indexPath.row] : games[indexPath.row]
         cell.configureWith(model: game)
         return cell
@@ -131,6 +142,16 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
             return   CGSize(width: collectionView.frame.width, height: 136)
         }
     }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard  isFiltered,
+               viewModel.isReachTheBottom(total: self.filteredGames.count, index: indexPath.item),
+               thereIsMorePages else{return}            
+            self.pageNumber += 1
+            self.filterGamesForSearchText(self.searchText, with: self.pageNumber)
+        }
+    
+
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailsVc = DetailsViewcontroller(id: isFiltered ? filteredGames[indexPath.row].id ?? 0 : games[indexPath.row].id ?? 0,selectedGame: isFiltered ? filteredGames[indexPath.row] : games[indexPath.row])
         
