@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import DCAFood
 
 final class DCAFoodTests: XCTestCase {
 
@@ -16,14 +17,27 @@ final class DCAFoodTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testReachToTableBottom(){
+        var sut = GamesViewModel()
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+        let isReached = sut.isReachTheBottom(total: 100, index: 99)
+        XCTAssertEqual(isReached, true, "pagination working smoothly")
+
     }
+    func testGenres(){
+        var sut = GamesViewModel()
+        let genres = [GameGenre(name: "action"),
+                      GameGenre(name: "comedy"),
+                      GameGenre(name: "none")
+        ]
+        let names = sut.getGenresNamesFrom(genres: genres)
+        
+        XCTAssertNotEqual(names, "action,comedy,none", "naming not correct")
+        XCTAssertEqual(names, "action, comedy, none", "naming is correct")
+
+    }
+
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

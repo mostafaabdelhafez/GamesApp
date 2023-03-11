@@ -7,7 +7,9 @@
 
 import UIKit
 struct BaseModel:Codable{
-    var results:[GameModel]
+    var results:[GameModel]?
+    var count:Int?
+    var next:String?
 }
 struct GameModel:Codable{
     var name:String?

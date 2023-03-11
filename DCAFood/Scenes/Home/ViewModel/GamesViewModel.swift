@@ -6,3 +6,13 @@
 //
 
 import Foundation
+class GamesViewModel{
+    func getGenresNamesFrom(genres:[GameGenre])->String{
+            let names = genres.map { $0.name ?? "" }
+            return  names.count > 1 ? names.joined(separator: ", ") : names.first ?? ""
+    }
+    func isReachTheBottom(total:Int,index:Int)->Bool{
+        index == total - 1
+    }
+
+}

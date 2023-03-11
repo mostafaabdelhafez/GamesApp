@@ -12,6 +12,8 @@
 		D43FD78629AE961000680664 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43FD78529AE961000680664 /* ViewController.swift */; };
 		D43FD78B29AE961100680664 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D43FD78A29AE961100680664 /* Assets.xcassets */; };
 		D43FD78E29AE961100680664 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D43FD78C29AE961100680664 /* LaunchScreen.storyboard */; };
+		D44A2CBA29BC62B20002BBAA /* DCAFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A2CB929BC62B20002BBAA /* DCAFoodTests.swift */; };
+		D44A2CC129BC64A80002BBAA /* GamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A2CC029BC64A80002BBAA /* GamesViewModel.swift */; };
 		D478D1CB29B3D0FE005D28E0 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478D1CA29B3D0FE005D28E0 /* Request.swift */; };
 		D478D1CE29B3E5A8005D28E0 /* DetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478D1CD29B3E5A8005D28E0 /* DetailsModel.swift */; };
 		D478D1D029B3E876005D28E0 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478D1CF29B3E876005D28E0 /* ImageProcessing.swift */; };
@@ -29,8 +31,6 @@
 		D4E4748C29B5B2330079DE48 /* HomeVC + Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4748B29B5B2330079DE48 /* HomeVC + Search.swift */; };
 		D4E7CEE329B26D5B001AD637 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E7CEE129B26D5B001AD637 /* HomeViewController.swift */; };
 		D4E7CEE429B26D5B001AD637 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4E7CEE229B26D5B001AD637 /* HomeViewController.xib */; };
-		D4E7CEE829B26DD8001AD637 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E7CEE629B26DD8001AD637 /* HomeTableViewCell.swift */; };
-		D4E7CEE929B26DD8001AD637 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4E7CEE729B26DD8001AD637 /* HomeTableViewCell.xib */; };
 		D4E7CEEB29B2707A001AD637 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E7CEEA29B2707A001AD637 /* HomeModel.swift */; };
 		D4E7CEEF29B275F8001AD637 /* DetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E7CEEE29B275F8001AD637 /* DetailsHeaderView.swift */; };
 		D4E7CEF129B27608001AD637 /* DetailsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4E7CEF029B27608001AD637 /* DetailsHeaderView.xib */; };
@@ -43,6 +43,16 @@
 		D4E7CF0329B2866A001AD637 /* DetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4E7CF0129B2866A001AD637 /* DetailsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D44A2CBB29BC62B20002BBAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D43FD77629AE960F00680664 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D43FD77D29AE960F00680664;
+			remoteInfo = DCAFood;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		D43FD77E29AE960F00680664 /* DCAFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCAFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43FD78129AE960F00680664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +61,9 @@
 		D43FD78A29AE961100680664 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D43FD78D29AE961100680664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D43FD78F29AE961100680664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D44A2CB729BC62B20002BBAA /* DCAFoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DCAFoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D44A2CB929BC62B20002BBAA /* DCAFoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCAFoodTests.swift; sourceTree = "<group>"; };
+		D44A2CC029BC64A80002BBAA /* GamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewModel.swift; sourceTree = "<group>"; };
 		D478D1CA29B3D0FE005D28E0 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		D478D1CD29B3E5A8005D28E0 /* DetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsModel.swift; sourceTree = "<group>"; };
 		D478D1CF29B3E876005D28E0 /* ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
@@ -67,8 +80,6 @@
 		D4E4748B29B5B2330079DE48 /* HomeVC + Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC + Search.swift"; sourceTree = "<group>"; };
 		D4E7CEE129B26D5B001AD637 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D4E7CEE229B26D5B001AD637 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		D4E7CEE629B26DD8001AD637 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		D4E7CEE729B26DD8001AD637 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		D4E7CEEA29B2707A001AD637 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		D4E7CEEE29B275F8001AD637 /* DetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeaderView.swift; sourceTree = "<group>"; };
 		D4E7CEF029B27608001AD637 /* DetailsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsHeaderView.xib; sourceTree = "<group>"; };
@@ -90,6 +101,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D44A2CB429BC62B20002BBAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -97,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				D43FD78029AE960F00680664 /* DCAFood */,
+				D44A2CB829BC62B20002BBAA /* DCAFoodTests */,
 				D43FD77F29AE960F00680664 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				D43FD77E29AE960F00680664 /* DCAFood.app */,
+				D44A2CB729BC62B20002BBAA /* DCAFoodTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,6 +146,14 @@
 				D47EB04B29BB9EB200388596 /* CoreDataFile.xcdatamodeld */,
 			);
 			path = DCAFood;
+			sourceTree = "<group>";
+		};
+		D44A2CB829BC62B20002BBAA /* DCAFoodTests */ = {
+			isa = PBXGroup;
+			children = (
+				D44A2CB929BC62B20002BBAA /* DCAFoodTests.swift */,
+			);
+			path = DCAFoodTests;
 			sourceTree = "<group>";
 		};
 		D478D1CC29B3E59E005D28E0 /* Model */ = {
@@ -224,6 +252,7 @@
 		D4E7CEDE29B26D1A001AD637 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D44A2CC029BC64A80002BBAA /* GamesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -247,8 +276,6 @@
 		D4E7CEE529B26D5F001AD637 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				D4E7CEE629B26DD8001AD637 /* HomeTableViewCell.swift */,
-				D4E7CEE729B26DD8001AD637 /* HomeTableViewCell.xib */,
 				D4B9144029B9ABBD00FDB3AF /* GamesCollectionViewCell.swift */,
 				D4B9144129B9ABBD00FDB3AF /* GamesCollectionViewCell.xib */,
 			);
@@ -325,6 +352,24 @@
 			productReference = D43FD77E29AE960F00680664 /* DCAFood.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D44A2CB629BC62B20002BBAA /* DCAFoodTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D44A2CBF29BC62B20002BBAA /* Build configuration list for PBXNativeTarget "DCAFoodTests" */;
+			buildPhases = (
+				D44A2CB329BC62B20002BBAA /* Sources */,
+				D44A2CB429BC62B20002BBAA /* Frameworks */,
+				D44A2CB529BC62B20002BBAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D44A2CBC29BC62B20002BBAA /* PBXTargetDependency */,
+			);
+			name = DCAFoodTests;
+			productName = DCAFoodTests;
+			productReference = D44A2CB729BC62B20002BBAA /* DCAFoodTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -337,6 +382,10 @@
 				TargetAttributes = {
 					D43FD77D29AE960F00680664 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					D44A2CB629BC62B20002BBAA = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = D43FD77D29AE960F00680664;
 					};
 				};
 			};
@@ -357,6 +406,7 @@
 			projectRoot = "";
 			targets = (
 				D43FD77D29AE960F00680664 /* DCAFood */,
+				D44A2CB629BC62B20002BBAA /* DCAFoodTests */,
 			);
 		};
 /* End PBXProject section */
@@ -374,9 +424,15 @@
 				D4E7CEF729B2818F001AD637 /* DetailsViewcontroller.xib in Resources */,
 				D4E7CF0329B2866A001AD637 /* DetailsTableViewCell.xib in Resources */,
 				D478D1DA29B40142005D28E0 /* FavouritesViewController.xib in Resources */,
-				D4E7CEE929B26DD8001AD637 /* HomeTableViewCell.xib in Resources */,
 				D4E7CEF129B27608001AD637 /* DetailsHeaderView.xib in Resources */,
 				D4E7CEE429B26D5B001AD637 /* HomeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D44A2CB529BC62B20002BBAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,12 +453,12 @@
 				D4B9144229B9ABBD00FDB3AF /* GamesCollectionViewCell.swift in Sources */,
 				D4A06F9E29BC2F8D008AD13A /* CoredataHelper.swift in Sources */,
 				D4E7CEFC29B28361001AD637 /* SectionHeader.swift in Sources */,
-				D4E7CEE829B26DD8001AD637 /* HomeTableViewCell.swift in Sources */,
 				D43FD78229AE961000680664 /* AppDelegate.swift in Sources */,
 				D4E7CF0229B2866A001AD637 /* DetailsTableViewCell.swift in Sources */,
 				D4E7CEF629B2818F001AD637 /* DetailsViewcontroller.swift in Sources */,
 				D4E7CEEB29B2707A001AD637 /* HomeModel.swift in Sources */,
 				D4B9143F29B9A6CF00FDB3AF /* EmptyStateLabel.swift in Sources */,
+				D44A2CC129BC64A80002BBAA /* GamesViewModel.swift in Sources */,
 				D478D1CE29B3E5A8005D28E0 /* DetailsModel.swift in Sources */,
 				D47EB04F29BBAAD300388596 /* GameOffline.swift in Sources */,
 				D478D1D029B3E876005D28E0 /* ImageProcessing.swift in Sources */,
@@ -412,7 +468,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D44A2CB329BC62B20002BBAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D44A2CBA29BC62B20002BBAA /* DCAFoodTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D44A2CBC29BC62B20002BBAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D43FD77D29AE960F00680664 /* DCAFood */;
+			targetProxy = D44A2CBB29BC62B20002BBAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D43FD78C29AE961100680664 /* LaunchScreen.storyboard */ = {
@@ -594,6 +666,48 @@
 			};
 			name = Release;
 		};
+		D44A2CBD29BC62B20002BBAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Mostafa.DCAFoodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DCAFood.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DCAFood";
+			};
+			name = Debug;
+		};
+		D44A2CBE29BC62B20002BBAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Mostafa.DCAFoodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DCAFood.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DCAFood";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -611,6 +725,15 @@
 			buildConfigurations = (
 				D43FD79329AE961100680664 /* Debug */,
 				D43FD79429AE961100680664 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D44A2CBF29BC62B20002BBAA /* Build configuration list for PBXNativeTarget "DCAFoodTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D44A2CBD29BC62B20002BBAA /* Debug */,
+				D44A2CBE29BC62B20002BBAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
